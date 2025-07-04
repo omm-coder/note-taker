@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../images/notepad-fill.svg"
+      type="image/x-icon"
+    />
+    <title>Note Taker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  
+  <body>
+    <header>
+      <h1>Quick Notes</h1>
+      <div class="div">
+        <button id="add-model">Add Note</button>
+        <i class="fa-regular fa-sun"></i>
+      </div>
+    </header>
+
+    <div class="container" id="parent"></div>
+
+    <div class="model" id="model">
+      <div class="model-header">
+        <h1>Add New Note</h1>
+        <i class="fa-solid fa-x" id="hide-model"></i>
+      </div>
+      <h3 id="error">no message</h3>
+      <div class="model-form">
+        <div class="input-controll">
+          <label for="title">Title</label>
+          <input type="text" placeholder="Enter note title" id="title"/>
+        </div>
+        <div class="input-controll">
+          <label for="content">Content</label>
+          <textarea placeholder="write your note here"></textarea>
+        </div>
+      </div>
+      <div class="model-footer">
+        <button id="close-model">cancel</button>
+        <button id="save">save note</button>
+      </div>
+    </div>
+
+
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

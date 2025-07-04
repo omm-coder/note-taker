@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #d3d3d3;
+  position: relative;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px clamp(5px, 30px, 50px);
+}
+
+header h1 {
+  font-weight: 600;
+  font-size: clamp(1rem, 3vw, 4rem);
+}
+
+header .div {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+}
+button {
+  border: none;
+  background-color: #ffebcd;
+  padding: 8px 16px;
+  font-size: 18px;
+  font-weight: 300;
+  border-radius: 8px;
+}
+
+.div i {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+/* //container section  */
+.container {
+  padding: 3%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  gap: 30px 20px;
+}
+
+.card {
+  background-color: #f0f8f8;
+  border-radius: 8px;
+  padding: 20px 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0 20px;
+}
+
+.card-header h1 {
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  text-wrap: balance;
+}
+
+.card-header .icons {
+  display: inline-flex;
+  gap: 10px;
+  margin: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.card-header .icons i {
+  font-size: 1rem;
+}
+.card-header .icons:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.card-body {
+  margin: 10px 0;
+}
+.card-body p {
+  font-weight: 300;
+  text-wrap: pretty;
+}
+
+/* //empty-div  */
+.empty {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+.empty h2 {
+  font-size: clamp(1.2rem, 2vw, 3rem);
+}
+.empty > * {
+  margin-bottom: 10px;
+}
+
+/* //styling the model  */
+.model {
+  background-color: #e8f3fc;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1),
+    -20px -30px 54px rgba(0, 0, 0, 0.18);
+  padding: 20px;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  z-index: 10;
+  border-radius: 12px;
+  display: none;
+}
+.model-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 20px;
+}
+
+.model-header h1 {
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  text-wrap: balance;
+}
+.model #error {
+  text-align: center;
+  padding: 0 10px;
+  text-wrap: balance;
+  font-weight: 300;
+  font-size: 18px;
+  color: rgb(237, 54, 54);
+  opacity: 0;
+  transition: opacity 0.4s linear;
+}
+.input-controll {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.input-controll label {
+  font-size: 22px;
+  font-weight: 300;
+}
+.input-controll input {
+  padding: 10px 22px;
+  font-size: 18px;
+  border: 2px solid grey;
+  border-radius: 12px;
+  width: 100%;
+}
+.input-controll textarea {
+  padding: 10px 22px;
+  font-size: 18px;
+  border: 2px solid #777;
+  border-radius: 12px;
+  height: 110px;
+  box-sizing: border-box;
+  resize: vertical; /* or none if you don't want resize */
+  line-height: 1.5;
+  text-align: left;
+}
+
+.model-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  padding: 10px;
+}
+
+.model-footer button:nth-of-type(1) {
+  background-color: #d3d3d3;
+}
+
+/* //making hover effects all  */
+button:hover {
+  transform: scale(1.05);
+}
+i:hover {
+  transform: scale(1.03);
+}
+
+/* //animatiion class  */
+.animate-model {
+  animation: fade-in 1s ease-in-out 1;
+}
+
+/* //animation keyframes  */
+@keyframes fade-in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* //media-queries  */
+@media screen and (max-width: 600px) {
+  header {
+    padding-top: 20px;
+    gap: 0 20px;
+  }
+  header .div i {
+    display: none;
+  }
+
+  .empty {
+    top: 50%;
+    left: 50%;
+    text-align: center;
+  }
+  
+  .model {
+    top: 5%;
+    left: 5%;
+    padding: 10px;
+    width: 18rem;
+  }
+}
