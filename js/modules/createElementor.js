@@ -1,5 +1,5 @@
-import { parent, editModel } from "./event.js";
-import { getNote, getNoteTitle} from "./note.js";
+import { parent, editModel, addModel } from "./event.js";
+import { getNote, getNoteTitle } from "./note.js";
 
 //global variables
 let card;
@@ -42,7 +42,6 @@ function createCard(heading, descreption) {
       editModel(h1.textContent, ct.textContent);
       getNote(h1.textContent, ct.textContent);
     }
-
   });
 
   //setting text-content of the title and content-body
@@ -66,8 +65,10 @@ function createDiv() {
       <div class="empty">
         <h2>No notes Yet</h2>
         <p>All your notes would be here.</p>
-        <button id="add-model">Add Note</button>
+        <button  id="addNoteBtn">Add Note</button>
      </div>`;
+  const addNoteBtn = emptyDiv.querySelector("#addNoteBtn");
+  addNoteBtn.addEventListener("click", addModel);
   parent.appendChild(emptyDiv);
 }
 

@@ -74,7 +74,7 @@ saveBtn.addEventListener('click', () => {
 })
 
 
-export { addModel, closeModel, editModel, showInSeconds, parent };
+export { addModel, closeModel, editModel, add_Model, showInSeconds, parent };
 
 
 //ends
